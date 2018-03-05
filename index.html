@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Educational Attainment and Health</title>
+    <script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.7.3/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 col-lg-12 col-md-offset-0">
+                <h2 style = "text-align:center;"><b>Correlations Between Educational Attainment and Health Risks</b></h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12  col-md-12 col-lg-12 col-md-offset-0" style="width:100%; height:100%;" scrolling="no">
+                Select different x- and y-labels to view a new correlation. The proportion of adults with each level of <b>highest educational attainment</b> are on the x-axis, and the proportion of adults with each <b>health risk</b> are on the y-axis. Click on a point for more information.<br><br>
+                <iframe src="d3.html" style="width:100%; height:100%;" class = "myIframe"></iframe>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12  col-md-12 col-lg-12  col-md-offset-0">
+                <div class="text">
+                    <h4 style = "font-weight:bold;">&ensp;Data Insights</h4>
+                    <ul>
+                        <li>On average, states with higher educational attainment also had a fewer adults who couldn't afford a needed doctor's visit in the past year, more binge drinking adults, and fewer disabled adults</li>
+                        <li>Adults with higher educational attainment may have higher incomes, allowing them to visit doctors as needed and preventing the onset of disabilities</li>
+                        <li>Adults who had bachelor's degrees or higher  may have had prolonged exposure to <a href = "https://www.npr.org/sections/health-shots/2014/09/08/345877489/cheap-drinks-and-risk-taking-fuel-college-drinking-culture">college drinking culture</a>, and therefore be more likely to binge-drinking tendencies</li>
+                        <li>College-educated adults may also have more disposable income to spend on alcohol</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class = "panel panel-default" style = "width: 700px">
+            <div class = "panel-heading" style = "font-weight: bold; font-size: 16px; text-align: center;">Correlations</div>
+            <table class = "table">
+                <tr>
+                    <th></th>
+                    <th>Can't Afford Dr. (%)</th>
+                    <th>Binge Drinkers (%)</th>
+                    <th>Disabled (%)</th>
+                </tr>
+                <tr>
+                    <th>Less than HS (%)</th>
+                    <td>0.75</td>
+                    <td>-0.46</td>
+                    <td>0.39</td>
+                </tr>
+                <tr>
+                    <th>HS Grads (%)</th>
+                    <td>0.28</td>
+                    <td>-0.31</td>
+                    <td>0.34</td>
+                </tr>
+                <tr>
+                    <th>Bach. or Above (%)</th>
+                    <td>-0.54</td>
+                    <td>0.51</td>
+                    <td>-0.43</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12  col-md-12 col-lg-12  col-md-offset-0">
+                <div class="text">
+                    <h4 style = "font-weight:bold;">&ensp;Data Sources</h4>
+                    <ul>
+                        <li><b>Educational attainment:</b> The Census Bureau's <a href = "https://www.census.gov/programs-surveys/acs/news/data-releases.2014.html">2014 American Community Survey 1-Year Estimates</a>
+                            <ul>
+                                <li><u>Less than high school diploma</u>: Proportion of adults without a high school diploma</li>
+                                <li><u>High school diploma</u>: Proportion of adults whose highest degree is a high school diploma</li>
+                                <li><u>Bachelor's degree</u>: Proportion of adults with a bachelor's degree or higher</li>
+                            </ul>
+                        </li>
+                        <li><b>Health outcomes:</b> The CDC's <a href = "https://chronicdata.cdc.gov/Behavioral-Risk-Factors/BRFSS-2014-Overall/5ra3-ixqq">2014 Behavioral Risk Factor Surveillance System (BRFSS) Prevalence Data</a>
+                            <ul>
+                                <li><u>Can't afford needed doctor's visit</u>: Proportion of adults who've needed to see a doctor but could not because of cost within the past 12 months</li>
+                                <li><u>Binge drinkers</u>: Proportion of adult males having five or more drinks on one occasion, and adult females having four or more drinks on one occasion</li>
+                                <li><u>Disabled</u>: Proportion of adults dults who are limited in any activities because of physical, mental, or emotional problems</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript" language="javascript">
+$('.myIframe').css('height', $(window).height() - 50 +'px');
+</script>
